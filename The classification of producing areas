@@ -115,11 +115,11 @@ class TCA:
 if __name__ == '__main__':
 
       M1=loadmat("C:/Users/wxr/onedrive/桌面/明后龙井/Data.mat")
-      num=90
+      num=10 #number of transfer instance
       n=num-1
       s=0
       M2=M1['Data']    
-      sum1,sum2,sum3,sum4=0,0,0,0
+      sum=0
       for i in range(10):
           x1=df()
           x2=df()
@@ -190,9 +190,9 @@ if __name__ == '__main__':
           Yt=Y_tar
           tca = TCA(kernel_type='primal' , dim=10, lamb=1, gamma=1)
           acctest,Xs_new,Xt_new= tca.fit_predict(Xs, Ys, Xt, Yt)
-          sum4+=acctest
+          sum+=acctest
           s=s+1
           print(s)
           
-      acc=sum4/10  
+      acc=sum/10  
       print("\n%.2f%% " % (acc*100))
